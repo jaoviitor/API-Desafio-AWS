@@ -4,6 +4,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+const apiVersion = '/api/v1';
+
 const rotaAluno = require('./routes/aluno');
 
 app.use(cors());
@@ -22,7 +24,7 @@ app.use((req, res, next) =>{
     next();
 })
 
-app.use('/aluno', rotaAluno);
+app.use(`${apiVersion}/aluno`, rotaAluno);
 
 //TRATAMENTO PARA QUANDO NÃO FOR ENCONTRADO UMA ROTA
 app.use((req, res, next) =>{

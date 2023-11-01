@@ -38,7 +38,7 @@ router.post('/cadastro', (req, res, next) =>{
     mysql.getConnection((error, conn) =>{
         if(error){ return res.status(500).send({ error: error }) };
         conn.query(
-            `INSERT INTO Aluno (nome, idade, nota_1, nota_2, professor, sala) VALEUS (?,?,?,?,?,?)`,
+            `INSERT INTO Aluno (nome, idade, nota_1, nota_2, professor, sala) VALUES (?,?,?,?,?,?)`,
             [req.body.nome, req.body.idade, req.body.nota_1, req.body.nota_2, req.body.professor, req.body.sala],
             (error, results) =>{
                 conn.release();

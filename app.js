@@ -122,7 +122,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                         {
                             "name": "id",
                             "in": "path",
-                            "description": "ID do aluno para busca",
+                            "description": "ID do aluno para alterar",
                             "required": true
                         }
                     ],
@@ -160,7 +160,37 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                             }
                         }
                     }
-                }
+                },
+                "delete": {
+                    "description": "Essa rota é responsável por deletar um aluno através de seu ID.",
+                    "summary": "Deleta um aluno por id",
+                    "tags": ["Aluno"],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "in": "path",
+                            "description": "ID do aluno para deletar",
+                            "required": true
+                        }
+                    ],
+                    "responses": {
+                        "201": {
+                            "description": "Aluno deletado com sucesso!",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "$ref": "#/components/schemas/Aluno"
+                                    }
+                                }
+                            }
+                        },
+                        "500": {
+                            "description": "Internal Server Error"
+                        },
+                    }
+                },
+
             }
         },
         "components": {

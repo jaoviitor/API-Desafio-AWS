@@ -94,10 +94,14 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                     "reponses": {
                         "200": {
                             "description": "OK",
-                            "schema": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#components/schemas/Aluno"
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#components/schemas/Aluno"
+                                        }
+                                    }
                                 }
                             }
                         }

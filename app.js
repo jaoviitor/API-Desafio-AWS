@@ -90,7 +90,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
             "/api/v1/aluno/{id}": {
                 "get": {
                     "description": "Essa rota é responsável por retornar um alunos cadastrado através de seu ID.",
-                    "summary": "Busca de um Aluno por id",
+                    "summary": "Busca de um aluno por id",
                     "tags": ["Aluno"],
                     "parameters": [
                         {
@@ -114,9 +114,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                         }
                     }
                 },
-                "put": {
+                "patch": {
                     "description": "Essa rota é responsável por alterar as informações de um aluno através de seu ID.",
-                    "summary": "Busca de um Aluno por id",
+                    "summary": "Altera os dados de um aluno por id",
                     "tags": ["Aluno"],
                     "parameters": [
                         {

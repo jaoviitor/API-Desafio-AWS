@@ -41,7 +41,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
         }
     ],
     "paths": {
-        "/aluno/cadastro": {
+        "/api/v1/aluno/cadastro": {
             "post":{
                 "sumary": "Cadastro de aluno",
                 "description": "Essa rota é responsável por cadastrar um aluno",

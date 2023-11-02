@@ -55,7 +55,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                                 "examples": {
                                     "Aluno": {
                                         "value": {
-                                            "nome": "João Vitor",
+                                            "nome": "João Silva",
 	                                        "idade": 16,
 	                                        "nota_1": 9.5,
 	                                        "nota_2": 8.5,
@@ -89,7 +89,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
             },
             "/api/v1/aluno/{id}": {
                 "get": {
-                    "description": "Essa rota é responsável por retornar todos os alunos cadastrados.",
+                    "description": "Essa rota é responsável por retornar um alunos cadastrado através de seu ID.",
                     "summary": "Busca de um Aluno por id",
                     "tags": ["Aluno"],
                     "parameters": [
@@ -103,6 +103,53 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                     "responses": {
                         "200": {
                             "description": "OK",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "$ref": "#/components/schemas/Aluno"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "put": {
+                    "description": "Essa rota é responsável por alterar as informações de um aluno através de seu ID.",
+                    "summary": "Busca de um Aluno por id",
+                    "tags": ["Aluno"],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "in": "path",
+                            "description": "ID do aluno para busca",
+                            "required": true
+                        }
+                    ],
+                    "requestBody":{
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Aluno"
+                                    },
+                                    "examples": {
+                                        "Aluno": {
+                                            "value": {
+                                                "nome": "Maria Silva",
+                                                "idade": 17,
+                                                "nota_1": 8.5,
+                                                "nota_2": 10,
+                                                "professor": "Guilherme",
+                                                "sala": 202
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                    "responses": {
+                        "201": {
+                            "description": "Informações do aluno alterada com sucesso!",
                             "content": {
                                 "application/json": {
                                     "schema": {

@@ -48,7 +48,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                 "tags": ["Aluno"],
                 "requestBody":{
                     "content": {
-                        "aplicattion/json": {
+                        "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/Aluno"
                                 },

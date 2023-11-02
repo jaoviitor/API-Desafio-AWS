@@ -43,7 +43,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
     "paths": {
         "/api/v1/aluno/cadastro": {
             "post":{
-                "sumary": "Cadastro de aluno",
+                "summary": "Cadastro de aluno",
                 "description": "Essa rota é responsável por cadastrar um aluno.",
                 "tags": ["Aluno"],
                 "requestBody":{
@@ -108,8 +108,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
             },
             "/api/v1/aluno/{id}": {
                 "get": {
-                    "description": "Essa rota é responsável por retornar um alunos cadastrado através de seu ID.",
-                    "summary": "Busca de um aluno por id",
+                    "description": "Essa rota é responsável por retornar um aluno cadastrado através de seu ID.",
+                    "summary": "Retorna um aluno por id",
                     "tags": ["Aluno"],
                     "parameters": [
                         {

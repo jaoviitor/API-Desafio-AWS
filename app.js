@@ -44,7 +44,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
         "/api/v1/aluno/cadastro": {
             "post":{
                 "sumary": "Cadastro de aluno",
-                "description": "Essa rota é responsável por cadastrar um aluno",
+                "description": "Essa rota é responsável por cadastrar um aluno.",
                 "tags": ["Aluno"],
                 "requestBody":{
                     "content": {
@@ -80,6 +80,34 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                                         "itens": {
                                             "$ref": "#/components/schemas/Aluno"
                                         }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "/api/v1/aluno/{id}": {
+                "get": {
+                    "description": "Essa rota é responsável por retornar todos os alunos cadastrados.",
+                    "summary": "Busca de um Aluno por id",
+                    "tags": ["Aluno"],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "in": "path",
+                            "description": "ID do aluno para busca",
+                            "required": true
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "OK",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "$ref": "#/components/schemas/Aluno"
                                     }
                                 }
                             }

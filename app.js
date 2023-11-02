@@ -98,9 +98,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                                 "application/json": {
                                     "schema": {
                                         "type": "array",
-                                        "items": {
-                                            "$ref": "#components/schemas/Aluno"
-                                        }
+                                        "$ref": "#components/schemas/Aluno"
                                     }
                                 }
                             }

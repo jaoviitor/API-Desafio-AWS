@@ -87,6 +87,25 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
             },
             "/api/v1/aluno/{id}": {
                 "get": {
+                    "description": "Essa rota é responsável por retornar todos os alunos cadastrados.",
+                    "summary": "Retorna todos os alunos cadastrados",
+                    "tags": ["Aluno"],
+                    "parameters": [],
+                    "reponses": {
+                        "200": {
+                            "description": "OK",
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#components/schemas/Aluno"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "/api/v1/aluno/{id}": {
+                "get": {
                     "description": "Essa rota é responsável por retornar um alunos cadastrado através de seu ID.",
                     "summary": "Busca de um aluno por id",
                     "tags": ["Aluno"],

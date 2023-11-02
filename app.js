@@ -91,7 +91,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup({
                     "summary": "Retorna todos os alunos cadastrados",
                     "tags": ["Aluno"],
                     "parameters": [],
-                    "reponses": {
+                    "responses": {
                         "200": {
                             "description": "OK",
                             "content": {
